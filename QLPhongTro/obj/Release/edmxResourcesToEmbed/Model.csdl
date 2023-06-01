@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLPhongTroModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tbl_DichVu">
+    <Key>
+      <PropertyRef Name="ID_DichVu" />
+    </Key>
+    <Property Name="ID_DichVu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TenDichVu" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="tbl_DienNuoc" Relationship="Self.FK_tbl_DienNuoc_tbl_DichVu" FromRole="tbl_DichVu" ToRole="tbl_DienNuoc" />
+  </EntityType>
+  <EntityType Name="tbl_DienNuoc">
+    <Key>
+      <PropertyRef Name="ID_DienNuoc" />
+    </Key>
+    <Property Name="ID_DienNuoc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ID_ThuePhong" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ID_DichVu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TuNgay" Type="DateTime" Precision="0" />
+    <Property Name="ToiNgay" Type="DateTime" Precision="0" />
+    <Property Name="ChiSoCu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ChiSoMoi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DonGia" Type="Int32" />
+    <Property Name="TrangThaiThanhToan" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="tbl_DichVu" Relationship="Self.FK_tbl_DienNuoc_tbl_DichVu" FromRole="tbl_DienNuoc" ToRole="tbl_DichVu" />
+    <NavigationProperty Name="tbl_ThuePhong" Relationship="Self.FK_tbl_DienNuoc_tbl_ThuePhong" FromRole="tbl_DienNuoc" ToRole="tbl_ThuePhong" />
+  </EntityType>
+  <EntityType Name="tbl_KhachHang">
+    <Key>
+      <PropertyRef Name="ID_KhachHang" />
+    </Key>
+    <Property Name="ID_KhachHang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Ho" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TenDem" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Ten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CCCD_CMND" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Sdt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="QueQuan" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="HKTT" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbl_ThuePhong" Relationship="Self.FK_tbl_ThuePhong_tbl_KhachHang" FromRole="tbl_KhachHang" ToRole="tbl_ThuePhong" />
+  </EntityType>
+  <EntityType Name="tbl_Khu">
+    <Key>
+      <PropertyRef Name="ID_Khu" />
+    </Key>
+    <Property Name="ID_Khu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TenKhu" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="tbl_Tang" Relationship="Self.FK_tbl_Tang_tbl_Khu" FromRole="tbl_Khu" ToRole="tbl_Tang" />
+  </EntityType>
+  <EntityType Name="tbl_LoaiPhong">
+    <Key>
+      <PropertyRef Name="ID_LoaiPhong" />
+    </Key>
+    <Property Name="ID_LoaiPhong" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LoaiPhong" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Dongia" Type="Int32" />
+    <NavigationProperty Name="tbl_Phong" Relationship="Self.FK_tbl_Phong_tbl_LoaiPhong" FromRole="tbl_LoaiPhong" ToRole="tbl_Phong" />
+  </EntityType>
+  <EntityType Name="tbl_Phong">
+    <Key>
+      <PropertyRef Name="ID_Phong" />
+    </Key>
+    <Property Name="ID_Phong" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ID_LoaiPhong" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ID_Tang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TrangThai" Type="Byte" />
+    <NavigationProperty Name="tbl_LoaiPhong" Relationship="Self.FK_tbl_Phong_tbl_LoaiPhong" FromRole="tbl_Phong" ToRole="tbl_LoaiPhong" />
+    <NavigationProperty Name="tbl_Tang" Relationship="Self.FK_tbl_Phong_tbl_Tang" FromRole="tbl_Phong" ToRole="tbl_Tang" />
+    <NavigationProperty Name="tbl_ThuePhong" Relationship="Self.FK_tbl_ThuePhong_tbl_Phong" FromRole="tbl_Phong" ToRole="tbl_ThuePhong" />
+  </EntityType>
+  <EntityType Name="tbl_TaiKhoan">
+    <Key>
+      <PropertyRef Name="TaiKhoan" />
+    </Key>
+    <Property Name="TaiKhoan" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MatKhau" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_Tang">
+    <Key>
+      <PropertyRef Name="ID_Tang" />
+    </Key>
+    <Property Name="ID_Tang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ID_Khu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TenKhu" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="tbl_Khu" Relationship="Self.FK_tbl_Tang_tbl_Khu" FromRole="tbl_Tang" ToRole="tbl_Khu" />
+    <NavigationProperty Name="tbl_Phong" Relationship="Self.FK_tbl_Phong_tbl_Tang" FromRole="tbl_Tang" ToRole="tbl_Phong" />
+  </EntityType>
+  <EntityType Name="tbl_ThuePhong">
+    <Key>
+      <PropertyRef Name="ID_ThuePhong" />
+    </Key>
+    <Property Name="ID_ThuePhong" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ID_KhachHang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ID_Phong" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GiaPhong" Type="Int32" />
+    <Property Name="TienDatCoc" Type="Int32" />
+    <Property Name="NgayThue" Type="DateTime" Precision="0" />
+    <Property Name="Ngaytra" Type="DateTime" Precision="0" />
+    <Property Name="TrangThaiThanhToan" Type="Byte" />
+    <NavigationProperty Name="tbl_DienNuoc" Relationship="Self.FK_tbl_DienNuoc_tbl_ThuePhong" FromRole="tbl_ThuePhong" ToRole="tbl_DienNuoc" />
+    <NavigationProperty Name="tbl_KhachHang" Relationship="Self.FK_tbl_ThuePhong_tbl_KhachHang" FromRole="tbl_ThuePhong" ToRole="tbl_KhachHang" />
+    <NavigationProperty Name="tbl_Phong" Relationship="Self.FK_tbl_ThuePhong_tbl_Phong" FromRole="tbl_ThuePhong" ToRole="tbl_Phong" />
+  </EntityType>
+  <EntityType Name="tbl_CauHinh">
+    <Key>
+      <PropertyRef Name="TenPhongTro" />
+      <PropertyRef Name="ChuPhongTro" />
+      <PropertyRef Name="DiaChiPhongTro" />
+      <PropertyRef Name="Sdt" />
+    </Key>
+    <Property Name="TenPhongTro" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ChuPhongTro" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DiaChiPhongTro" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Sdt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_tbl_DienNuoc_tbl_DichVu">
+    <End Role="tbl_DichVu" Type="Self.tbl_DichVu" Multiplicity="0..1" />
+    <End Role="tbl_DienNuoc" Type="Self.tbl_DienNuoc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_DichVu">
+        <PropertyRef Name="ID_DichVu" />
+      </Principal>
+      <Dependent Role="tbl_DienNuoc">
+        <PropertyRef Name="ID_DichVu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_DienNuoc_tbl_ThuePhong">
+    <End Role="tbl_ThuePhong" Type="Self.tbl_ThuePhong" Multiplicity="0..1" />
+    <End Role="tbl_DienNuoc" Type="Self.tbl_DienNuoc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_ThuePhong">
+        <PropertyRef Name="ID_ThuePhong" />
+      </Principal>
+      <Dependent Role="tbl_DienNuoc">
+        <PropertyRef Name="ID_ThuePhong" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ThuePhong_tbl_KhachHang">
+    <End Role="tbl_KhachHang" Type="Self.tbl_KhachHang" Multiplicity="0..1" />
+    <End Role="tbl_ThuePhong" Type="Self.tbl_ThuePhong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_KhachHang">
+        <PropertyRef Name="ID_KhachHang" />
+      </Principal>
+      <Dependent Role="tbl_ThuePhong">
+        <PropertyRef Name="ID_KhachHang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Tang_tbl_Khu">
+    <End Role="tbl_Khu" Type="Self.tbl_Khu" Multiplicity="0..1" />
+    <End Role="tbl_Tang" Type="Self.tbl_Tang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Khu">
+        <PropertyRef Name="ID_Khu" />
+      </Principal>
+      <Dependent Role="tbl_Tang">
+        <PropertyRef Name="ID_Khu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Phong_tbl_LoaiPhong">
+    <End Role="tbl_LoaiPhong" Type="Self.tbl_LoaiPhong" Multiplicity="0..1" />
+    <End Role="tbl_Phong" Type="Self.tbl_Phong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_LoaiPhong">
+        <PropertyRef Name="ID_LoaiPhong" />
+      </Principal>
+      <Dependent Role="tbl_Phong">
+        <PropertyRef Name="ID_LoaiPhong" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Phong_tbl_Tang">
+    <End Role="tbl_Tang" Type="Self.tbl_Tang" Multiplicity="0..1" />
+    <End Role="tbl_Phong" Type="Self.tbl_Phong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Tang">
+        <PropertyRef Name="ID_Tang" />
+      </Principal>
+      <Dependent Role="tbl_Phong">
+        <PropertyRef Name="ID_Tang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ThuePhong_tbl_Phong">
+    <End Role="tbl_Phong" Type="Self.tbl_Phong" Multiplicity="0..1" />
+    <End Role="tbl_ThuePhong" Type="Self.tbl_ThuePhong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Phong">
+        <PropertyRef Name="ID_Phong" />
+      </Principal>
+      <Dependent Role="tbl_ThuePhong">
+        <PropertyRef Name="ID_Phong" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QLPhongTroEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="tbl_DichVu" EntityType="Self.tbl_DichVu" />
+    <EntitySet Name="tbl_DienNuoc" EntityType="Self.tbl_DienNuoc" />
+    <EntitySet Name="tbl_KhachHang" EntityType="Self.tbl_KhachHang" />
+    <EntitySet Name="tbl_Khu" EntityType="Self.tbl_Khu" />
+    <EntitySet Name="tbl_LoaiPhong" EntityType="Self.tbl_LoaiPhong" />
+    <EntitySet Name="tbl_Phong" EntityType="Self.tbl_Phong" />
+    <EntitySet Name="tbl_TaiKhoan" EntityType="Self.tbl_TaiKhoan" />
+    <EntitySet Name="tbl_Tang" EntityType="Self.tbl_Tang" />
+    <EntitySet Name="tbl_ThuePhong" EntityType="Self.tbl_ThuePhong" />
+    <EntitySet Name="tbl_CauHinh" EntityType="Self.tbl_CauHinh" />
+    <AssociationSet Name="FK_tbl_DienNuoc_tbl_DichVu" Association="Self.FK_tbl_DienNuoc_tbl_DichVu">
+      <End Role="tbl_DichVu" EntitySet="tbl_DichVu" />
+      <End Role="tbl_DienNuoc" EntitySet="tbl_DienNuoc" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_DienNuoc_tbl_ThuePhong" Association="Self.FK_tbl_DienNuoc_tbl_ThuePhong">
+      <End Role="tbl_ThuePhong" EntitySet="tbl_ThuePhong" />
+      <End Role="tbl_DienNuoc" EntitySet="tbl_DienNuoc" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ThuePhong_tbl_KhachHang" Association="Self.FK_tbl_ThuePhong_tbl_KhachHang">
+      <End Role="tbl_KhachHang" EntitySet="tbl_KhachHang" />
+      <End Role="tbl_ThuePhong" EntitySet="tbl_ThuePhong" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Tang_tbl_Khu" Association="Self.FK_tbl_Tang_tbl_Khu">
+      <End Role="tbl_Khu" EntitySet="tbl_Khu" />
+      <End Role="tbl_Tang" EntitySet="tbl_Tang" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Phong_tbl_LoaiPhong" Association="Self.FK_tbl_Phong_tbl_LoaiPhong">
+      <End Role="tbl_LoaiPhong" EntitySet="tbl_LoaiPhong" />
+      <End Role="tbl_Phong" EntitySet="tbl_Phong" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Phong_tbl_Tang" Association="Self.FK_tbl_Phong_tbl_Tang">
+      <End Role="tbl_Tang" EntitySet="tbl_Tang" />
+      <End Role="tbl_Phong" EntitySet="tbl_Phong" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ThuePhong_tbl_Phong" Association="Self.FK_tbl_ThuePhong_tbl_Phong">
+      <End Role="tbl_Phong" EntitySet="tbl_Phong" />
+      <End Role="tbl_ThuePhong" EntitySet="tbl_ThuePhong" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

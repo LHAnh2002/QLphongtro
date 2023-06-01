@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="QLPhongTroModelStoreContainer" CdmEntityContainer="QLPhongTroEntities">
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="QLPhongTroModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_DichVu">
+      <EntityTypeMapping TypeName="QLPhongTroModel.tbl_DichVu">
+        <MappingFragment StoreEntitySet="tbl_DichVu">
+          <ScalarProperty Name="ID_DichVu" ColumnName="ID_DichVu" />
+          <ScalarProperty Name="TenDichVu" ColumnName="TenDichVu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_DienNuoc">
+      <EntityTypeMapping TypeName="QLPhongTroModel.tbl_DienNuoc">
+        <MappingFragment StoreEntitySet="tbl_DienNuoc">
+          <ScalarProperty Name="ID_DienNuoc" ColumnName="ID_DienNuoc" />
+          <ScalarProperty Name="ID_ThuePhong" ColumnName="ID_ThuePhong" />
+          <ScalarProperty Name="ID_DichVu" ColumnName="ID_DichVu" />
+          <ScalarProperty Name="TuNgay" ColumnName="TuNgay" />
+          <ScalarProperty Name="ToiNgay" ColumnName="ToiNgay" />
+          <ScalarProperty Name="ChiSoCu" ColumnName="ChiSoCu" />
+          <ScalarProperty Name="ChiSoMoi" ColumnName="ChiSoMoi" />
+          <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+          <ScalarProperty Name="TrangThaiThanhToan" ColumnName="TrangThaiThanhToan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_KhachHang">
+      <EntityTypeMapping TypeName="QLPhongTroModel.tbl_KhachHang">
+        <MappingFragment StoreEntitySet="tbl_KhachHang">
+          <ScalarProperty Name="ID_KhachHang" ColumnName="ID_KhachHang" />
+          <ScalarProperty Name="Ho" ColumnName="Ho" />
+          <ScalarProperty Name="TenDem" ColumnName="TenDem" />
+          <ScalarProperty Name="Ten" ColumnName="Ten" />
+          <ScalarProperty Name="CCCD_CMND" ColumnName="CCCD_CMND" />
+          <ScalarProperty Name="Sdt" ColumnName="Sdt" />
+          <ScalarProperty Name="QueQuan" ColumnName="QueQuan" />
+          <ScalarProperty Name="HKTT" ColumnName="HKTT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Khu">
+      <EntityTypeMapping TypeName="QLPhongTroModel.tbl_Khu">
+        <MappingFragment StoreEntitySet="tbl_Khu">
+          <ScalarProperty Name="ID_Khu" ColumnName="ID_Khu" />
+          <ScalarProperty Name="TenKhu" ColumnName="TenKhu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_LoaiPhong">
+      <EntityTypeMapping TypeName="QLPhongTroModel.tbl_LoaiPhong">
+        <MappingFragment StoreEntitySet="tbl_LoaiPhong">
+          <ScalarProperty Name="ID_LoaiPhong" ColumnName="ID_LoaiPhong" />
+          <ScalarProperty Name="LoaiPhong" ColumnName="LoaiPhong" />
+          <ScalarProperty Name="Dongia" ColumnName="Dongia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Phong">
+      <EntityTypeMapping TypeName="QLPhongTroModel.tbl_Phong">
+        <MappingFragment StoreEntitySet="tbl_Phong">
+          <ScalarProperty Name="ID_Phong" ColumnName="ID_Phong" />
+          <ScalarProperty Name="ID_LoaiPhong" ColumnName="ID_LoaiPhong" />
+          <ScalarProperty Name="ID_Tang" ColumnName="ID_Tang" />
+          <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_TaiKhoan">
+      <EntityTypeMapping TypeName="QLPhongTroModel.tbl_TaiKhoan">
+        <MappingFragment StoreEntitySet="tbl_TaiKhoan">
+          <ScalarProperty Name="TaiKhoan" ColumnName="TaiKhoan" />
+          <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Tang">
+      <EntityTypeMapping TypeName="QLPhongTroModel.tbl_Tang">
+        <MappingFragment StoreEntitySet="tbl_Tang">
+          <ScalarProperty Name="ID_Tang" ColumnName="ID_Tang" />
+          <ScalarProperty Name="ID_Khu" ColumnName="ID_Khu" />
+          <ScalarProperty Name="TenKhu" ColumnName="TenKhu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ThuePhong">
+      <EntityTypeMapping TypeName="QLPhongTroModel.tbl_ThuePhong">
+        <MappingFragment StoreEntitySet="tbl_ThuePhong">
+          <ScalarProperty Name="ID_ThuePhong" ColumnName="ID_ThuePhong" />
+          <ScalarProperty Name="ID_KhachHang" ColumnName="ID_KhachHang" />
+          <ScalarProperty Name="ID_Phong" ColumnName="ID_Phong" />
+          <ScalarProperty Name="GiaPhong" ColumnName="GiaPhong" />
+          <ScalarProperty Name="TienDatCoc" ColumnName="TienDatCoc" />
+          <ScalarProperty Name="NgayThue" ColumnName="NgayThue" />
+          <ScalarProperty Name="Ngaytra" ColumnName="Ngaytra" />
+          <ScalarProperty Name="TrangThaiThanhToan" ColumnName="TrangThaiThanhToan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_CauHinh">
+      <EntityTypeMapping TypeName="QLPhongTroModel.tbl_CauHinh">
+        <MappingFragment StoreEntitySet="tbl_CauHinh">
+          <ScalarProperty Name="TenPhongTro" ColumnName="TenPhongTro" />
+          <ScalarProperty Name="ChuPhongTro" ColumnName="ChuPhongTro" />
+          <ScalarProperty Name="DiaChiPhongTro" ColumnName="DiaChiPhongTro" />
+          <ScalarProperty Name="Sdt" ColumnName="Sdt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

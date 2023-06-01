@@ -1,0 +1,33 @@
+09/01/2023 12:06:10 SA ## add new Tầng: Tầng 1
+09/01/2023 12:06:53 SA ## add new Tầng: Tầng 2
+09/01/2023 12:06:59 SA ## delete Tầng: Tầng 2
+09/01/2023 12:07:02 SA ## update Tầng: Tên Tầng:Tầng 1  -> Tầng 2, ID Khu:  1-> 1
+09/01/2023 12:07:06 SA ## update Tầng: Tên Tầng:Tầng 1  -> Tầng 1, ID Khu:  1-> 1
+09/01/2023 12:12:19 SA ## add new Loại Phòng: Phòng đơn
+09/01/2023 12:12:26 SA ## update Loại Phòng: Tên Loai Phong: Phòng đơn  -> Phòng đơn , Đơn Giá: 1000000 -> 11000000
+09/01/2023 12:12:31 SA ## update Loại Phòng: Tên Loai Phong: Phòng đơn  -> Phòng đơn , Đơn Giá: 1000000 -> 1000000
+09/01/2023 12:12:46 SA ## add new Loại Phòng: Phòng đôi
+09/01/2023 12:12:56 SA ## add new Loại Phòng: Phòng ba
+09/01/2023 12:13:00 SA ## delete Tầng: Phòng ba  
+09/01/2023 12:33:13 SA ## add new Tầng: Phòng 1
+09/01/2023 12:34:58 SA ## update Phòng:ID Loại Phòng: 1 -> 1, ID Tầng:  1 -> 1, Tên Phòng:  Phòng 1    -> Phòng 1   , Trạng Thái: False  -> False
+09/01/2023 1:10:03 SA ## update Phòng:ID Loại Phòng: 1 -> 1, ID Tầng:  1 -> 1, Tên Phòng:  Phòng 1    -> Phòng 1   , Trạng Thái: False  -> False
+09/01/2023 1:17:18 SA ## add new Tầng: Tầng 2
+09/01/2023 1:24:03 SA ## Đã Xóa Tên Kho, ID = 3
+09/01/2023 3:33:11 SA ## update khách hàng: Tên khách hàng:Lê Hoàng Anh  -> Lê Hoàng Anh, CCCD:  465120-> 465120, Số Điện Thoại:  98465-> 98465, Quê Quán:  fvgbhn-> fvgbhn, HKTT:  tfyg-> tfyg, Trạng thái:  False-> True
+09/01/2023 3:36:18 SA ## update khách hàng: Tên khách hàng:Lê Hoàng Anh  -> Lê Hoàng Anh, CCCD:  465120-> 465120, Số Điện Thoại:  98465-> 98465, Quê Quán:  fvgbhn-> fvgbhn, HKTT:  tfyg-> tfyg, Trạng thái:  False-> True
+09/01/2023 3:36:25 SA ## update khách hàng: Tên khách hàng:Lê Hoàng Anh  -> Lê Hoàng Anh, CCCD:  465120-> 465120, Số Điện Thoại:  98465-> 98465, Quê Quán:  fvgbhn-> fvgbhn, HKTT:  tfyg-> tfyg, Trạng thái:  False-> True
+09/01/2023 3:36:28 SA ## update khách hàng: Tên khách hàng:Lê Hoàng Anh  -> Lê Hoàng Anh, CCCD:  465120-> 465120, Số Điện Thoại:  98465-> 98465, Quê Quán:  fvgbhn-> fvgbhn, HKTT:  tfyg-> tfyg, Trạng thái:  False-> True
+09/01/2023 3:36:31 SA ## update khách hàng: Tên khách hàng:Lê Hoàng Anh  -> Lê Hoàng Anh, CCCD:  465120-> 465120, Số Điện Thoại:  98465-> 98465, Quê Quán:  fvgbhn-> fvgbhn, HKTT:  tfyg-> tfyg, Trạng thái:  False-> True
+09/01/2023 3:36:35 SA ## update khách hàng: Tên khách hàng:Lê Hoàng Anh  -> Lê Hoàng Anh, CCCD:  465120-> 465120, Số Điện Thoại:  98465-> 98465, Quê Quán:  fvgbhn-> fvgbhn, HKTT:  tfyg-> tfyg, Trạng thái:  False-> True
+09/01/2023 3:36:38 SA ## update khách hàng: Tên khách hàng:Lê Hoàng Anh  -> Lê Hoàng Anh, CCCD:  465120-> 465120, Số Điện Thoại:  98465-> 98465, Quê Quán:  fvgbhn-> fvgbhn, HKTT:  tfyg-> tfyg, Trạng thái:  False-> True
+09/01/2023 3:37:31 SA ## update khách hàng: Tên khách hàng:Lê Hoàng Anh  -> Lê Hoàng Anh, CCCD:  465120-> 465120, Số Điện Thoại:  98465-> 98465, Quê Quán:  fvgbhn-> fvgbhn, HKTT:  tfyg-> tfyg, Trạng thái:  False-> True
+09/01/2023 11:21:43 SA ## update Phòng:ID Loại Phòng: 1 -> 1, ID Tầng:  1 -> 1, Tên Phòng:  Phòng 1    -> Phòng 1   , Trạng Thái: True  -> True
+09/01/2023 11:31:27 SA ## update Phòng:ID Loại Phòng: 1 -> 1, ID Tầng:  1 -> 1, Tên Phòng:  Phòng 1    -> Phòng 1   , Trạng Thái: True  -> True
+09/01/2023 11:31:40 SA ## update Phòng:ID Loại Phòng: 1 -> 1, ID Tầng:  1 -> 1, Tên Phòng:  Phòng 1    -> Phòng 1   , Trạng Thái: False  -> False
+09/01/2023 11:31:51 SA ## update khách hàng: Tên khách hàng:Lê Hoàng Anh  -> Lê Hoàng Anhh, CCCD:  465120-> 465120, Số Điện Thoại:  98465-> 98465, Quê Quán:  fvgbhn-> fvgbhn, HKTT:  tfyg-> tfyg, Trạng thái:  True-> True
+09/01/2023 11:31:55 SA ## update khách hàng: Tên khách hàng:Lê Hoàng Anh  -> Lê Hoàng Anh, CCCD:  465120-> 465120, Số Điện Thoại:  98465-> 98465, Quê Quán:  fvgbhn-> fvgbhn, HKTT:  tfyg-> tfyg, Trạng thái:  True-> True
+09/01/2023 12:07:45 CH ## update Phòng:ID Loại Phòng: 1 -> 1, ID Tầng:  1 -> 1, Tên Phòng:  Phòng 1    -> Phòng 1   , Trạng Thái: True  -> True
+09/01/2023 12:07:49 CH ## update Phòng:ID Loại Phòng: 1 -> 1, ID Tầng:  1 -> 1, Tên Phòng:  Phòng 1    -> Phòng 1   , Trạng Thái: False  -> False
+09/01/2023 12:41:56 CH ## add new Tầng: Phòng 3
+09/01/2023 11:40:17 CH ## update Phòng:ID Loại Phòng: 2 -> 2, ID Tầng:  1 -> 1, Tên Phòng:  Phòng 2    -> Phòng 2   , Trạng Thái: False  -> False

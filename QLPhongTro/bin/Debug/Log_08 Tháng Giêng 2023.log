@@ -1,0 +1,14 @@
+08/01/2023 2:31:47 SA ## update Phòng:ID Loại Phòng: 6 -> 6, ID Tầng:  11 -> 11, Tên Phòng:  Phòng 1 -> Phòng 1, Trạng Thái: True  -> True
+08/01/2023 5:39:03 SA ## update khách hàng: Tên khách hàng:Lê Hoàng Anh  -> Lê Văn B, CCCD:  4577-> 569, Số Điện Thoại:  5745-> 8956, Quê Quán:  jksdfj-> fg, HKTT:  ầ-> fgvh, Trạng thái:  False-> True
+08/01/2023 5:56:43 SA ## update khách hàng: Tên khách hàng:Lê Hoàng Anh  -> Lê Khim mom, CCCD:  4577-> 56, Số Điện Thoại:  5745-> 4683, Quê Quán:  jksdfj-> vghbj, HKTT:  ầ-> fvghj, Trạng thái:  False-> True
+08/01/2023 5:56:47 SA ## update khách hàng: Tên khách hàng:Lê Hoàng Anh  -> Lê Thị Bưởi, CCCD:  4577-> 6453, Số Điện Thoại:  5745-> 6458, Quê Quán:  jksdfj-> fvghbj, HKTT:  ầ-> fvghbj, Trạng thái:  False-> True
+08/01/2023 5:56:58 SA ## update khách hàng: Tên khách hàng:Lê Văn B  -> Lê Văn B, CCCD:  569-> 569, Số Điện Thoại:  8956-> 8956, Quê Quán:  fg-> fg, HKTT:  fgvh-> fgvh, Trạng thái:  True-> True
+08/01/2023 5:57:01 SA ## update khách hàng: Tên khách hàng:Lê Hoàng Anh  -> Lê Thị Bưởi, CCCD:  4577-> 6453, Số Điện Thoại:  5745-> 6458, Quê Quán:  jksdfj-> fvghbj, HKTT:  ầ-> fvghbj, Trạng thái:  False-> False
+08/01/2023 5:57:10 SA ## update khách hàng: Tên khách hàng:Lê Hoàng Anh  -> Lê Thị Bưởi, CCCD:  4577-> 6453, Số Điện Thoại:  5745-> 6458, Quê Quán:  jksdfj-> fvghbj, HKTT:  ầ-> fvghbj, Trạng thái:  False-> True
+08/01/2023 5:57:17 SA ## update khách hàng: Tên khách hàng:Lê Hoàng Anh  -> Lê Thị Bưởi, CCCD:  4577-> 6453, Số Điện Thoại:  5745-> 6458, Quê Quán:  jksdfj-> fvghbj, HKTT:  ầ-> fvghbj, Trạng thái:  False-> False
+08/01/2023 7:01:52 SA ## update Phòng:ID Loại Phòng: 1 -> 1, ID Tầng:  6 -> 6, Tên Phòng:  Phòng 1 -> Phòng 1, Trạng Thái: False  -> False
+08/01/2023 7:01:55 SA ## update Phòng:ID Loại Phòng: 1 -> 1, ID Tầng:  9 -> 9, Tên Phòng:  Phòng 1 -> Phòng 1, Trạng Thái: False  -> False
+08/01/2023 11:47:13 CH ## Thêm Mới Khu, ID = 1
+08/01/2023 11:47:16 CH ## Thêm Mới Khu, ID = 2
+08/01/2023 11:47:19 CH ## Thêm Mới Khu, ID = 3
+08/01/2023 11:48:10 CH ## Đã Xóa Tên Kho, ID = 4

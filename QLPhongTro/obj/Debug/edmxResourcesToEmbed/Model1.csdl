@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLPhongTroModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="cauhinh">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="chuphongtro" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="diachiphongtro" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="dongiadien" Type="Int32" />
+    <Property Name="dongianuoc" Type="Int32" />
+    <Property Name="sdt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="chitiethopdong">
+    <Key>
+      <PropertyRef Name="ID_CTHopdong" />
+    </Key>
+    <Property Name="ID_CTHopdong" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_HopDong" Type="Int32" />
+    <Property Name="TienDatCoc" Type="Int32" />
+    <Property Name="NgayBatdau" Type="DateTime" Precision="0" />
+    <Property Name="ngayketthuc" Type="DateTime" Precision="0" />
+    <Property Name="CSD_Cu" Type="Int32" />
+    <Property Name="CSD_Moi" Type="Int32" />
+    <Property Name="CSN_Cu" Type="Int32" />
+    <Property Name="CSN_Moi" Type="Int32" />
+    <Property Name="TienVS" Type="Int32" />
+    <Property Name="TienInternet" Type="Int32" />
+    <Property Name="dathanhtoan" Type="Int32" />
+    <NavigationProperty Name="Hopdong" Relationship="Self.FK_chitiethopdong_Hopdong" FromRole="chitiethopdong" ToRole="Hopdong" />
+  </EntityType>
+  <EntityType Name="Hopdong">
+    <Key>
+      <PropertyRef Name="ID_Hopdong" />
+    </Key>
+    <Property Name="ID_Hopdong" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_phong" Type="Int32" />
+    <Property Name="GiaPhong" Type="Int32" />
+    <Property Name="DatCoc" Type="Int32" />
+    <Property Name="Daketthuc" Type="Boolean" />
+    <Property Name="Dongiadien" Type="Int32" />
+    <Property Name="Dongianuoc" Type="Int32" />
+    <NavigationProperty Name="chitiethopdongs" Relationship="Self.FK_chitiethopdong_Hopdong" FromRole="Hopdong" ToRole="chitiethopdong" />
+    <NavigationProperty Name="hopdong_khachhang" Relationship="Self.FK_hopdong_khachhang_Hopdong" FromRole="Hopdong" ToRole="hopdong_khachhang" />
+    <NavigationProperty Name="phong" Relationship="Self.FK_Hopdong_phong" FromRole="Hopdong" ToRole="phong" />
+  </EntityType>
+  <EntityType Name="hopdong_khachhang">
+    <Key>
+      <PropertyRef Name="ID_Hopdong" />
+      <PropertyRef Name="ID_Khachhang" />
+    </Key>
+    <Property Name="ID_Hopdong" Type="Int32" Nullable="false" />
+    <Property Name="ID_Khachhang" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Hopdong" Relationship="Self.FK_hopdong_khachhang_Hopdong" FromRole="hopdong_khachhang" ToRole="Hopdong" />
+    <NavigationProperty Name="khachhang" Relationship="Self.FK_hopdong_khachhang_khachhang" FromRole="hopdong_khachhang" ToRole="khachhang" />
+  </EntityType>
+  <EntityType Name="khachhang">
+    <Key>
+      <PropertyRef Name="ID_KhachHang" />
+    </Key>
+    <Property Name="ID_KhachHang" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ho" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TenDem" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Ten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CCCD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="sdt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="QueQuan" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="HKTT" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="hopdong_khachhang" Relationship="Self.FK_hopdong_khachhang_khachhang" FromRole="khachhang" ToRole="hopdong_khachhang" />
+  </EntityType>
+  <EntityType Name="khu">
+    <Key>
+      <PropertyRef Name="ID_Khu" />
+    </Key>
+    <Property Name="ID_Khu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenKhu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tangs" Relationship="Self.FK_tang_khu" FromRole="khu" ToRole="tang" />
+  </EntityType>
+  <EntityType Name="LoaiPhong">
+    <Key>
+      <PropertyRef Name="ID_LoaiPhong" />
+    </Key>
+    <Property Name="ID_LoaiPhong" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LoaiPhong1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Soluongtoida" Type="Int32" />
+    <Property Name="DonGia" Type="Int32" />
+    <NavigationProperty Name="phongs" Relationship="Self.FK_phong_LoaiPhong" FromRole="LoaiPhong" ToRole="phong" />
+  </EntityType>
+  <EntityType Name="phong">
+    <Key>
+      <PropertyRef Name="ID_Phong" />
+    </Key>
+    <Property Name="ID_Phong" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_LoaiPhong" Type="Int32" />
+    <Property Name="ID_Tang" Type="Int32" />
+    <Property Name="TenPhong" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Soluonghienhanh" Type="Int32" />
+    <Property Name="TrangThai" Type="Boolean" />
+    <NavigationProperty Name="Hopdongs" Relationship="Self.FK_Hopdong_phong" FromRole="phong" ToRole="Hopdong" />
+    <NavigationProperty Name="LoaiPhong" Relationship="Self.FK_phong_LoaiPhong" FromRole="phong" ToRole="LoaiPhong" />
+    <NavigationProperty Name="tang" Relationship="Self.FK_phong_tang" FromRole="phong" ToRole="tang" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tang">
+    <Key>
+      <PropertyRef Name="ID_Tang" />
+    </Key>
+    <Property Name="ID_Tang" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_Khu" Type="Int32" />
+    <Property Name="TenTang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="khu" Relationship="Self.FK_tang_khu" FromRole="tang" ToRole="khu" />
+    <NavigationProperty Name="phongs" Relationship="Self.FK_phong_tang" FromRole="tang" ToRole="phong" />
+  </EntityType>
+  <Association Name="FK_chitiethopdong_Hopdong">
+    <End Role="Hopdong" Type="Self.Hopdong" Multiplicity="0..1" />
+    <End Role="chitiethopdong" Type="Self.chitiethopdong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hopdong">
+        <PropertyRef Name="ID_Hopdong" />
+      </Principal>
+      <Dependent Role="chitiethopdong">
+        <PropertyRef Name="ID_HopDong" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_hopdong_khachhang_Hopdong">
+    <End Role="Hopdong" Type="Self.Hopdong" Multiplicity="1" />
+    <End Role="hopdong_khachhang" Type="Self.hopdong_khachhang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hopdong">
+        <PropertyRef Name="ID_Hopdong" />
+      </Principal>
+      <Dependent Role="hopdong_khachhang">
+        <PropertyRef Name="ID_Hopdong" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Hopdong_phong">
+    <End Role="phong" Type="Self.phong" Multiplicity="0..1" />
+    <End Role="Hopdong" Type="Self.Hopdong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="phong">
+        <PropertyRef Name="ID_Phong" />
+      </Principal>
+      <Dependent Role="Hopdong">
+        <PropertyRef Name="id_phong" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_hopdong_khachhang_khachhang">
+    <End Role="khachhang" Type="Self.khachhang" Multiplicity="1" />
+    <End Role="hopdong_khachhang" Type="Self.hopdong_khachhang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="khachhang">
+        <PropertyRef Name="ID_KhachHang" />
+      </Principal>
+      <Dependent Role="hopdong_khachhang">
+        <PropertyRef Name="ID_Hopdong" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tang_khu">
+    <End Role="khu" Type="Self.khu" Multiplicity="0..1" />
+    <End Role="tang" Type="Self.tang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="khu">
+        <PropertyRef Name="ID_Khu" />
+      </Principal>
+      <Dependent Role="tang">
+        <PropertyRef Name="ID_Khu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_phong_LoaiPhong">
+    <End Role="LoaiPhong" Type="Self.LoaiPhong" Multiplicity="0..1" />
+    <End Role="phong" Type="Self.phong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoaiPhong">
+        <PropertyRef Name="ID_LoaiPhong" />
+      </Principal>
+      <Dependent Role="phong">
+        <PropertyRef Name="ID_LoaiPhong" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_phong_tang">
+    <End Role="tang" Type="Self.tang" Multiplicity="0..1" />
+    <End Role="phong" Type="Self.phong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tang">
+        <PropertyRef Name="ID_Tang" />
+      </Principal>
+      <Dependent Role="phong">
+        <PropertyRef Name="ID_Tang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QLPhongTroEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="cauhinhs" EntityType="Self.cauhinh" />
+    <EntitySet Name="chitiethopdongs" EntityType="Self.chitiethopdong" />
+    <EntitySet Name="Hopdongs" EntityType="Self.Hopdong" />
+    <EntitySet Name="hopdong_khachhang" EntityType="Self.hopdong_khachhang" />
+    <EntitySet Name="khachhangs" EntityType="Self.khachhang" />
+    <EntitySet Name="khus" EntityType="Self.khu" />
+    <EntitySet Name="LoaiPhongs" EntityType="Self.LoaiPhong" />
+    <EntitySet Name="phongs" EntityType="Self.phong" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="tangs" EntityType="Self.tang" />
+    <AssociationSet Name="FK_chitiethopdong_Hopdong" Association="Self.FK_chitiethopdong_Hopdong">
+      <End Role="Hopdong" EntitySet="Hopdongs" />
+      <End Role="chitiethopdong" EntitySet="chitiethopdongs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_hopdong_khachhang_Hopdong" Association="Self.FK_hopdong_khachhang_Hopdong">
+      <End Role="Hopdong" EntitySet="Hopdongs" />
+      <End Role="hopdong_khachhang" EntitySet="hopdong_khachhang" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Hopdong_phong" Association="Self.FK_Hopdong_phong">
+      <End Role="phong" EntitySet="phongs" />
+      <End Role="Hopdong" EntitySet="Hopdongs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_hopdong_khachhang_khachhang" Association="Self.FK_hopdong_khachhang_khachhang">
+      <End Role="khachhang" EntitySet="khachhangs" />
+      <End Role="hopdong_khachhang" EntitySet="hopdong_khachhang" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tang_khu" Association="Self.FK_tang_khu">
+      <End Role="khu" EntitySet="khus" />
+      <End Role="tang" EntitySet="tangs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_phong_LoaiPhong" Association="Self.FK_phong_LoaiPhong">
+      <End Role="LoaiPhong" EntitySet="LoaiPhongs" />
+      <End Role="phong" EntitySet="phongs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_phong_tang" Association="Self.FK_phong_tang">
+      <End Role="tang" EntitySet="tangs" />
+      <End Role="phong" EntitySet="phongs" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
